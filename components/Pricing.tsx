@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { CircleDollarSign, Scale, CloudRain, ShieldCheck, Zap, Info, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+
 
 export default function Pricing() {
   // Calculator States
@@ -62,26 +62,19 @@ export default function Pricing() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="inline-flex items-center gap-2 bg-[#f4f6f8] border border-gray-200 px-4 py-1.5 rounded-full text-navy text-[11px] font-extrabold uppercase tracking-widest"
           >
             <CircleDollarSign className="w-3.5 h-3.5 text-brand-green" />
             <span>Fair & Transparent Pricing</span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          <h2
             className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.1]"
           >
             Pay strict distance rates. <br/>
             <span className="text-brand-green">Zero hidden fees.</span>
-          </motion.h2>
+          </h2>
         </div>
 
         {/* Bento Grid Pricing Layout */}
@@ -91,10 +84,7 @@ export default function Pricing() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             
             {/* Standard Rates Card */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <div
               className="bg-[#f4f6f8] rounded-[2rem] p-8 sm:p-10 border border-gray-100"
             >
               <div className="flex justify-between items-center mb-8">
@@ -122,16 +112,13 @@ export default function Pricing() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Weight Rules & Surges Grid */}
             <div className="grid sm:grid-cols-2 gap-6">
               
               {/* Weight Card */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+              <div 
                 className="bg-brand-green rounded-[2rem] p-8 border border-brand-green/20 relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 p-6 opacity-20 pointer-events-none group-hover:scale-110 transition-transform">
@@ -145,14 +132,10 @@ export default function Pricing() {
                   <span className="block text-[11px] font-bold text-navy uppercase tracking-widest mb-1">Excess Cargo</span>
                   <span className="font-black text-2xl text-navy">₹5 <span className="text-sm font-bold opacity-80">/ kg</span></span>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Dynamic Surges Card */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+              <div 
                 className="bg-navy rounded-[2rem] p-8 border border-navy shadow-lg relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -170,16 +153,13 @@ export default function Pricing() {
                     <span className="text-white font-bold">+10%</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
             </div>
           </div>
 
           {/* Right Panel: Interactive Cost Estimator */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <div 
             className="lg:col-span-5 bg-white border border-gray-200/80 rounded-[2rem] p-8 sm:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] flex flex-col justify-between"
           >
             <div>

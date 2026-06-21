@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import herorider from "@/public/Group 48.svg";
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   MapPin,
@@ -14,19 +13,6 @@ import {
 } from "lucide-react";
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-  };
-
   return (
     <section className="relative bg-[#f4f6f8] min-h-screen pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden flex items-center">
       
@@ -37,14 +23,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
         {/* Bento Box Structured Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-6"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-fade-in">
+
           {/* 1. MAIN TEXT CARD */}
-          <motion.div variants={itemVariants} className="lg:col-span-7 bg-white/70 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-12 lg:p-16 border border-white shadow-[0_20px_80px_-15px_rgba(0,0,0,0.05)] flex flex-col justify-center relative overflow-hidden group">
+          <div className="lg:col-span-7 bg-white/70 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-12 lg:p-16 border border-white shadow-[0_20px_80px_-15px_rgba(0,0,0,0.05)] flex flex-col justify-center relative overflow-hidden group">
             
             {/* Subtle inner grid */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10 pointer-events-none" />
@@ -73,7 +55,7 @@ export default function Hero() {
                   Get Started Now
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <div className="flex items-center gap-3 px-6 py-4">
+                <div className="flex items-center gap-3 px-2 py-4">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
                       <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -87,18 +69,14 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* 2. MAIN IMAGE CARD */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 bg-gradient-to-br from-[#E6F4DB] to-[#F5FAEF] rounded-[2.5rem] p-8 border border-[#c1e6a3]/50 shadow-[0_20px_80px_-15px_rgba(122,201,67,0.15)] relative flex items-center justify-center min-h-[400px] overflow-hidden group">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#E6F4DB] to-[#F5FAEF] rounded-[2.5rem] p-8 border border-[#c1e6a3]/50 shadow-[0_20px_80px_-15px_rgba(122,201,67,0.15)] relative flex items-center justify-center min-h-[400px] overflow-hidden group">
             {/* Animated background rings */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border-[40px] border-white/40 blur-3xl group-hover:scale-110 transition-transform duration-1000" />
             
-            <motion.div 
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-10 w-full h-full p-6 sm:p-12"
-            >
+            <div className="relative z-10 w-full h-full min-h-[300px] p-6 sm:p-12 animate-float">
               <Image
                 src={herorider}
                 alt="Logistics Rider"
@@ -106,7 +84,7 @@ export default function Hero() {
                 priority
                 className="object-contain"
               />
-            </motion.div>
+            </div>
 
             {/* Floating Glass Badge */}
             <div className="absolute bottom-8 right-8 bg-white/60 backdrop-blur-md border border-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
@@ -118,12 +96,10 @@ export default function Hero() {
                  <p className="text-navy font-bold text-sm">100% Verified</p>
                </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* 3. STRUCTURED SUB-GRID FOR STATS & CARDS */}
-          
-          {/* Stats Card */}
-          <motion.div variants={itemVariants} className="col-span-1 lg:col-span-4 bg-white/80 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white shadow-sm flex items-center justify-center hover:-translate-y-1 transition-transform duration-300">
+          {/* 3. Stats Card */}
+          <div className="col-span-1 lg:col-span-4 bg-white/80 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white shadow-sm flex items-center justify-center hover:-translate-y-1 transition-transform duration-300">
              <div className="w-full grid grid-cols-2 gap-8 text-center divide-x divide-gray-100">
                <div>
                  <h3 className="text-4xl font-black text-navy tracking-tighter">500<span className="text-brand-green">+</span></h3>
@@ -134,22 +110,21 @@ export default function Hero() {
                  <p className="text-gray-500 text-[9px] font-black uppercase tracking-[0.2em] mt-2">Avg Pickup</p>
                </div>
              </div>
-          </motion.div>
+          </div>
 
           {/* Live Tracking Card (Dark Theme Block) */}
-          <motion.div variants={itemVariants} className="col-span-1 lg:col-span-4 bg-navy rounded-[2rem] p-8 sm:p-10 shadow-[0_15px_40px_-10px_rgba(11,31,77,0.4)] flex items-center justify-center gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-tr from-navy to-navy-light opacity-50" />
-            <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-500 relative z-10">
+          <div className="col-span-1 lg:col-span-4 bg-navy rounded-[2rem] p-8 sm:p-10 shadow-[0_15px_40px_-10px_rgba(11,31,77,0.4)] flex items-center justify-center gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-500">
               <Truck className="text-brand-green w-7 h-7" />
             </div>
-            <div className="relative z-10">
+            <div>
               <p className="font-black text-white text-xl tracking-tight leading-tight">Live Tracking</p>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1.5">Real-time GPS</p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Delivery Confirmed Card (Green Theme Block) */}
-          <motion.div variants={itemVariants} className="col-span-1 lg:col-span-4 bg-brand-green rounded-[2rem] p-8 sm:p-10 shadow-[0_15px_40px_-10px_rgba(122,201,67,0.4)] flex items-center justify-center gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+          <div className="col-span-1 lg:col-span-4 bg-brand-green rounded-[2rem] p-8 sm:p-10 shadow-[0_15px_40px_-10px_rgba(122,201,67,0.4)] flex items-center justify-center gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
             <div className="absolute inset-0 bg-white/5" />
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 border border-white/20 group-hover:scale-110 transition-transform duration-500 relative z-10">
               <CheckCircle2 className="text-white w-7 h-7" />
@@ -158,9 +133,9 @@ export default function Hero() {
               <p className="font-black text-navy text-xl tracking-tight leading-tight">Confirmed</p>
               <p className="text-[10px] font-bold text-navy/70 uppercase tracking-widest mt-1.5">Proof of delivery</p>
             </div>
-          </motion.div>
+          </div>
 
-        </motion.div>
+        </div>
       </div>
     </section>
   );

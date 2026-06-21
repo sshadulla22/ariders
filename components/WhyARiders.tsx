@@ -2,7 +2,7 @@
 
 import React from "react";
 import { UserMinus, Wallet, Clock, Network, IndianRupee, Smartphone, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+
 
 export default function WhyARiders() {
   const features = [
@@ -88,34 +88,17 @@ export default function WhyARiders() {
         
         {/* Header Content */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm px-4 py-1.5 rounded-full text-brand-green text-[11px] font-extrabold uppercase tracking-widest"
-          >
+          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm px-4 py-1.5 rounded-full text-brand-green text-[11px] font-extrabold uppercase tracking-widest">
             <span>Platform Advantages</span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.1]"
-          >
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.1]">
             Why Partner With ARiders?
-          </motion.h2>
+          </h2>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto"
-          >
+          <p className="text-gray-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto">
             Eliminate operational friction and unpredictable expenses. Tap into our verified fleet to hyper-optimize your logistics immediately.
-          </motion.p>
+          </p>
         </div>
 
         {/* Bento Grid Layout */}
@@ -125,15 +108,10 @@ export default function WhyARiders() {
             const theme = getThemeStyles(feature.theme);
 
             return (
-              <motion.div
+              <div
                 key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`${feature.spanClass} ${theme.card} border p-8 sm:p-10 rounded-[2rem] flex flex-col justify-between group overflow-hidden relative transition-transform duration-500 hover:-translate-y-1`}
               >
-                {/* Subtle Grid Background for Dark Theme */}
                 {feature.theme === 'dark' && (
                   <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10 pointer-events-none" />
                 )}
@@ -155,7 +133,7 @@ export default function WhyARiders() {
                   <span>Explore feature</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

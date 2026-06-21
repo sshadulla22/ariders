@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { Award, Compass, Users2, Zap } from "lucide-react";
-import { motion } from "framer-motion";
+import { Compass, Users2, Zap } from "lucide-react";
 
 export default function About() {
   const stats = [
@@ -18,64 +17,40 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 relative">
           
-          {/* STICKY LEFT COLUMN: Typography & Intro */}
+          {/* STICKY LEFT COLUMN */}
           <div className="lg:w-5/12">
             <div className="sticky top-32 space-y-8">
               
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 bg-[#f4f6f8] border border-gray-200 px-4 py-1.5 rounded-full text-navy text-[11px] font-extrabold uppercase tracking-widest"
-              >
+              <div className="inline-flex items-center gap-2 bg-[#f4f6f8] border border-gray-200 px-4 py-1.5 rounded-full text-navy text-[11px] font-extrabold uppercase tracking-widest">
                 <Compass className="w-3.5 h-3.5 text-brand-green" />
                 <span>Our Story</span>
-              </motion.div>
+              </div>
               
               <div className="relative">
-                {/* Large Background Typography */}
                 <h2 className="absolute -top-10 -left-6 text-[8rem] font-black text-[#f4f6f8] leading-none select-none pointer-events-none z-0 tracking-tighter hidden md:block">
                   ABOUT
                 </h2>
                 
-                <motion.h3 
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-[1.1] relative z-10"
-                >
+                <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-[1.1] relative z-10">
                   Revolutionizing <br/>
                   <span className="text-brand-green">Last-Mile.</span>
-                </motion.h3>
+                </h3>
               </div>
 
-              <motion.p 
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-lg text-gray-500 font-medium leading-relaxed relative z-10"
-              >
+              <p className="text-lg text-gray-500 font-medium leading-relaxed relative z-10">
                 ARiders is a technology-driven logistics marketplace. We connect visionary businesses with verified independent delivery partners to make hyperlocal logistics invisible, fast, and remarkably affordable.
-              </motion.p>
+              </p>
               
             </div>
           </div>
 
-          {/* SCROLLING RIGHT COLUMN: Bento Cards */}
+          {/* SCROLLING RIGHT COLUMN */}
           <div className="lg:w-7/12 space-y-6">
             
             {/* Visual Box Frame (Sea Link) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative w-full bg-navy rounded-[2rem] overflow-hidden aspect-[16/9] shadow-sm border border-navy group"
-            >
+            <div className="relative w-full bg-navy rounded-[2rem] overflow-hidden aspect-[16/9] shadow-sm border border-navy group">
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent z-10" />
 
-              {/* Bandra Worli Sea Link Vector Graphic */}
               <svg 
                 viewBox="0 0 400 300" 
                 className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out"
@@ -117,32 +92,22 @@ export default function About() {
                 <p className="text-white text-[10px] font-bold tracking-widest uppercase mb-2">Connecting Mumbai</p>
                 <h4 className="text-white text-2xl font-extrabold leading-tight">Gateway to Hyperlocal Success</h4>
               </div>
-            </motion.div>
+            </div>
 
             {/* Stats Grid */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4"
-            >
-              {stats.map((stat, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {stats.map((stat) => (
                 <div key={stat.label} className="bg-[#f4f6f8] p-6 rounded-[2rem] border border-gray-100 flex flex-col justify-center items-center text-center">
                   <p className="text-2xl lg:text-3xl font-extrabold text-navy tracking-tight">{stat.value}</p>
                   <p className="text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-2">{stat.label}</p>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Mission & Network Cards */}
             <div className="grid md:grid-cols-2 gap-6">
               
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-brand-green p-8 rounded-[2rem] border border-brand-green/20 relative overflow-hidden group"
-              >
+              <div className="bg-brand-green p-8 rounded-[2rem] border border-brand-green/20 relative overflow-hidden group">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-navy mb-8 group-hover:scale-110 transition-transform">
                   <Zap className="w-6 h-6" />
                 </div>
@@ -150,14 +115,9 @@ export default function About() {
                 <p className="text-navy/80 text-[15px] leading-relaxed font-medium">
                   Simplify last-mile delivery by providing fast, reliable, and radically affordable logistics solutions without the friction of hiring dedicated delivery staff.
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-[#f4f6f8] p-8 rounded-[2rem] border border-gray-200 relative overflow-hidden group"
-              >
+              <div className="bg-[#f4f6f8] p-8 rounded-[2rem] border border-gray-200 relative overflow-hidden group">
                 <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-green mb-8 shadow-sm group-hover:scale-110 transition-transform">
                   <Users2 className="w-6 h-6" />
                 </div>
@@ -165,7 +125,7 @@ export default function About() {
                 <p className="text-gray-500 text-[15px] leading-relaxed font-medium">
                   Businesses can instantly tap into our sprawling network of delivery partners for same-day and scheduled deliveries across the entire Mumbai region.
                 </p>
-              </motion.div>
+              </div>
 
             </div>
 
